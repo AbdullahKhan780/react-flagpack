@@ -1,6 +1,6 @@
 import * as React from 'react';
 import type { Flags } from 'flagpack-core';
-import './Flag.scss';
+import './Flag.css';
 interface Props {
     code: Flags;
     size?: string;

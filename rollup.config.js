@@ -3,11 +3,7 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import replace from 'rollup-plugin-replace'
-import postcss from 'rollup-plugin-postcss'
-import autoprefixer from 'autoprefixer'
-import clean from 'postcss-clean'
-// import babili from 'rollup-plugin-babili'
-import minify from 'rollup-plugin-babel-minify'
+import cssOnly from "rollup-plugin-css-only"
 
 const dev = 'development'
 const prod = 'production'
@@ -28,11 +24,7 @@ const plugins = [
       ]
     },
   }),
-  postcss({
-    extract: false,
-    plugins: [autoprefixer, clean],
-    writeDefinitions: true,
-  }),
+  cssOnly(),
   typescript()
 ]
 
