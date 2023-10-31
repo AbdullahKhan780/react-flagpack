@@ -38,22 +38,23 @@ const Flag = ({
   hasBorderRadius = true,
   className,
 }) => {
-  const URL = require(`./flags/${size}/${code}.svg`);
+  fetch(`./flags/${size}/${code}.svg`, { method: "get" }).then((response) => {
+    console.log(response);
+    // React__namespace.createElement(
+    //   "div",
+    //   {
+    //     className: `flag
+    //     ${gradient}
+    //     size-${size}
+    //     ${hasBorder ? "border" : ""}
+    //     ${hasDropShadow ? "drop-shadow" : ""}
+    //     ${hasBorderRadius ? "border-radius" : ""}
+    //     ${className ? className.replace(/\s\s+/g, " ").trim() : ""}`,
+    //   },
 
-  React__namespace.createElement(
-    "div",
-    {
-      className: `flag
-      ${gradient}
-      size-${size}
-      ${hasBorder ? "border" : ""}
-      ${hasDropShadow ? "drop-shadow" : ""}
-      ${hasBorderRadius ? "border-radius" : ""}
-      ${className ? className.replace(/\s\s+/g, " ").trim() : ""}`,
-    },
-
-    React__namespace.createElement("img", { src: URL.default })
-  );
+    //   React__namespace.createElement("img", { src: URL.default })
+    // );
+  });
 };
 
 module.exports = Flag;
