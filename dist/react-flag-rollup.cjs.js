@@ -38,8 +38,10 @@ const Flag = ({
   hasBorderRadius = true,
   className,
 }) => {
-  return import(`./flags/${size}/${code}.svg`).then((url) =>
-    React__namespace.createElement(
+  return import(`./flags/${size}/${code}.svg`).then((url) =>{
+    console.log(url);
+
+    return React__namespace.createElement(
       "div",
       {
         className: `flag
@@ -52,7 +54,7 @@ const Flag = ({
       },
 
       React__namespace.createElement("img", { src: url.default })
-    )
+    )}
   ).catch((error)=> console.log(error));
 };
 
