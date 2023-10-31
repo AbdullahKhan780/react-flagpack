@@ -1,10 +1,10 @@
-import * as React from 'react';
-import type { Flags } from 'flagpack-core';
-import './Flag.css';
+import * as React from "react";
+import type { Flags } from "flagpack-core";
+import "./Flag.css";
 interface Props {
     code: Flags;
     size?: string;
-    gradient?: '' | 'top-down' | 'real-circular' | 'real-linear';
+    gradient?: "" | "top-down" | "real-circular" | "real-linear";
     hasBorder?: boolean;
     hasDropShadow?: boolean;
     hasBorderRadius?: boolean;

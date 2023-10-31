@@ -28,10 +28,6 @@ const plugins = [
   typescript()
 ]
 
-if (env === prod) {
-  plugins.push(minify())
-}
-
 export default {
   plugins,
   external: ['react', 'flagpack-core'],
