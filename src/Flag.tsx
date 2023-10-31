@@ -24,10 +24,9 @@ const Flag: React.FC<Props> = ({
   const [FlagImg, setFlagImg] = React.useState<string | null>(null);
 
   React.useEffect(() => {
-    (async () =>
-      setFlagImg(
-        (await import(`./flags/${size}/${code}.svg`)).default ?? null
-      ))();
+    fetch(`./flags/${size}/${code}.svg`, {method: "get"}).then((response)=> {
+      console.log("response", response);
+    })
   }, [size, code]);
 
   return (
