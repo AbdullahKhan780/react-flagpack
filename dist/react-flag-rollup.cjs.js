@@ -2,6 +2,7 @@
 
 var React = require('react');
 
+var _documentCurrentScript = typeof document !== 'undefined' ? document.currentScript : null;
 function _interopNamespaceDefault(e) {
   var n = Object.create(null);
   if (e) {
@@ -22,20 +23,14 @@ function _interopNamespaceDefault(e) {
 var React__namespace = /*#__PURE__*/_interopNamespaceDefault(React);
 
 const Flag = ({ code = "NL", size = "l", gradient = "", hasBorder = true, hasDropShadow = false, hasBorderRadius = true, className, }) => {
-    const [FlagImg] = React__namespace.useState(null);
-    React__namespace.useEffect(() => {
-        fetch(`./flags/${size}/${code}.svg`, { method: "get" }).then((response) => {
-            console.log("response", response);
-        });
-    }, [size, code]);
-    return (React__namespace.createElement(React__namespace.Fragment, null, FlagImg && (React__namespace.createElement("div", { className: `flag
+    return (React__namespace.createElement("div", { className: `flag
   ${gradient}
   size-${size}
   ${hasBorder ? "border" : ""}
   ${hasDropShadow ? "drop-shadow" : ""}
   ${hasBorderRadius ? "border-radius" : ""}
   ${className ? className.replace(/\s\s+/g, " ").trim() : ""}` },
-        React__namespace.createElement("img", { src: FlagImg })))));
+        React__namespace.createElement("img", { src: new URL(`./flags/${size}/${code}.svg`, (typeof document === 'undefined' ? require('u' + 'rl').pathToFileURL(__filename).href : (_documentCurrentScript && _documentCurrentScript.src || new URL('react-flag-rollup.cjs.js', document.baseURI).href))).href })));
 };
 
 module.exports = Flag;
