@@ -21,7 +21,7 @@ const Flag: React.FC<Props> = ({
   hasBorderRadius = true,
   className,
 }: Props) => {
-  const [FlagImg, setFlagImg] = React.useState<string | null>(null);
+  const [FlagImg] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     fetch(`./flags/${size}/${code}.svg`, {method: "get"}).then((response)=> {

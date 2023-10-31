@@ -22,12 +22,11 @@ function _interopNamespaceDefault(e) {
 var React__namespace = /*#__PURE__*/_interopNamespaceDefault(React);
 
 const Flag = ({ code = "NL", size = "l", gradient = "", hasBorder = true, hasDropShadow = false, hasBorderRadius = true, className, }) => {
-    const [FlagImg, setFlagImg] = React__namespace.useState(null);
+    const [FlagImg] = React__namespace.useState(null);
     React__namespace.useEffect(() => {
-        (async () => {
-            var _a;
-            return setFlagImg((_a = (await import(`./flags/${size}/${code}.svg`)).default) !== null && _a !== void 0 ? _a : null);
-        })();
+        fetch(`./flags/${size}/${code}.svg`, { method: "get" }).then((response) => {
+            console.log("response", response);
+        });
     }, [size, code]);
     return (React__namespace.createElement(React__namespace.Fragment, null, FlagImg && (React__namespace.createElement("div", { className: `flag
   ${gradient}
